@@ -42,7 +42,6 @@ int Length( struct Node *p)
 
 int Delete(struct Node *p, int index)
 {
-    struct Node *q;
     int x= -1, i;
 
     if( index < 1 || index> Length(p))
