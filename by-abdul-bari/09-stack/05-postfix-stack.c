@@ -120,9 +120,13 @@ char * InToPost ( char *infix)
 {
     int i=0,j=0;
     char *postfix;
-
+    
     long len=strlen(infix);
     postfix= (char *)malloc((len+2)*sizeof(char));
+
+
+    resetStack();
+    push('#');
 
     while(infix[i]!='\0')
     {
@@ -139,7 +143,7 @@ char * InToPost ( char *infix)
         }
     }
 
-    while (top!=NULL)
+    while (top != NULL && top->data != '#')
         postfix[j++] = pop();
     
     postfix[j] = '\0';
@@ -151,7 +155,6 @@ int main ()
 {
     char *infix = "a+b*c";
 
-    push('#');
     char *postfix = InToPost(infix);
 
     printf("%s", postfix);
