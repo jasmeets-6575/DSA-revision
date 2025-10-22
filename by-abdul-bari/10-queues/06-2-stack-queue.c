@@ -48,7 +48,7 @@ int dequeue()
     return pop2();
 }
 
-/* Queue Front: peek front element */
+/* Queue Front: peek front element of queue */
 int front()
 {
     if (isEmpty2())
