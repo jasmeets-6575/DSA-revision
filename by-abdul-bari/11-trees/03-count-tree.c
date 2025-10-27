@@ -192,6 +192,54 @@ int height (struct Node *root)
         return y + 1;
 }
 
+int countLeaf(struct Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    if (root->lchild == NULL && root->rchild == NULL)
+        return countLeaf(root->lchild) + countLeaf(root->rchild) + 1;
+
+    return countLeaf(root->lchild) + countLeaf(root->rchild);
+}
+
+
+int countDeg1(struct Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    if ((root->lchild != NULL && root->rchild == NULL) ||
+        (root->lchild == NULL && root->rchild != NULL))
+        return countDeg1(root->lchild) + countDeg1(root->rchild) + 1;
+
+    return countDeg1(root->lchild) + countDeg1(root->rchild);
+}
+
+int countDeg2(struct Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    if (root->lchild != NULL && root->rchild != NULL)
+        return countDeg2(root->lchild) + countDeg2(root->rchild) + 1;
+
+    return countDeg2(root->lchild) + countDeg2(root->rchild);
+}
+
+int countDegGT0(struct Node *root) //(non-leaf / internal)
+{
+    if (root == NULL)
+        return 0;
+
+    if (root->lchild != NULL || root->rchild != NULL)
+        return countDegGT0(root->lchild) + countDegGT0(root->rchild) + 1;
+
+    return countDegGT0(root->lchild) + countDegGT0(root->rchild);
+}
+
+
+
 int main()
 {
     treeCreate();
