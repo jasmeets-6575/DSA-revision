@@ -56,6 +56,7 @@ void preorder( struct Node *p)
         preorder(p->rchild);
     }
 }
+
 void inorder( struct Node *p)
 {
     if(p)
@@ -65,6 +66,7 @@ void inorder( struct Node *p)
         inorder(p->rchild);
     }
 }
+
 void postorder( struct Node *p)
 {
     if(p)
@@ -95,6 +97,7 @@ void IPreorder(struct Node *p)
         }
     }
 }
+
 void IInorder(struct Node *p)
 {
     struct Stack stk;
@@ -203,7 +206,6 @@ int countLeaf(struct Node *root)
     return countLeaf(root->lchild) + countLeaf(root->rchild);
 }
 
-
 int countDeg1(struct Node *root)
 {
     if (root == NULL)
@@ -237,8 +239,6 @@ int countDegGT0(struct Node *root) //(non-leaf / internal)
 
     return countDegGT0(root->lchild) + countDegGT0(root->rchild);
 }
-
-
 
 int main()
 {
