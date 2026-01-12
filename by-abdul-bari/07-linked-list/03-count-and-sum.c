@@ -62,14 +62,15 @@ int Rsum( struct Node *p)
     if(p==NULL)
         return 0;
     else 
-        return Rsum(p->next)+p->next;
+        return Rsum(p->next) + p->data;
 }
 
 int main ()
 {
     int A[] = { 3, 5, 7, 10 , 15};
-
+    int r;
     create(A, 5);
+    r = count(first);
     printf("Sum is %d\n\n", Rsum(first));
     return 0;
 }
