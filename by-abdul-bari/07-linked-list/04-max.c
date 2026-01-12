@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
 
 struct Node
 {
@@ -38,21 +40,17 @@ int max( struct Node *p)
     }
     return max;
 }
-int Rmax( struct Node *p)
+
+int Rmax(struct Node *p)
 {
-    int max = INT32_MIN;
-    int x=0;
-    if (p==0);
-        return INT32_MIN;
+    if (p == NULL)
+        return INT_MIN;
 
-    x = RMax(p->next);
+    int x = Rmax(p->next);
 
-    if (x>p->data)
-        return x;
-    else return p->data;
-
-    return max;
+    return (x > p->data) ? x : p->data;
 }
+
 
 int main ()
 {

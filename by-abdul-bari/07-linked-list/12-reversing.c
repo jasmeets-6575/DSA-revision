@@ -99,10 +99,8 @@ int main ()
     int A[] = { 3, 5, 5, 7, 10 , 15};
 
     create(A, 5);
-    removeDuplicated(first);
 
     // index
-    delete(first , 3);
     display(first);
     return 0;
 }  

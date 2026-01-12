@@ -38,7 +38,7 @@ int count ( struct Node *p)
     return count;
 }
 
-int isSorted( struct Node *p,int x)
+int isSorted( struct Node *p)
 {   
     int x = INT64_MIN;
     while ( p!= NULL)
@@ -68,7 +68,6 @@ int main ()
     display(first);
 
     // index
-    delete(first , 3);
     display(first);
     return 0;
 }

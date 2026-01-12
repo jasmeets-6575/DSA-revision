@@ -38,7 +38,7 @@ int count ( struct Node *p)
     return count;
 }
 
-int removeDuplicated( struct Node *p)
+void removeDuplicated( struct Node *p)
 {   
     struct Node *q= p->next;
 
@@ -75,7 +75,6 @@ int main ()
     removeDuplicated(first);
 
     // index
-    delete(first , 3);
     display(first);
     return 0;
 }
