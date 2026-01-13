@@ -62,7 +62,7 @@ void insertSort( struct Node *p , int x)
         }
         else 
         {
-            t->next = q->next;
+            t->next = p->next;
             q->next = t;
         }
     }
