@@ -61,7 +61,7 @@ struct Node * Search (int key)
     while(t!=NULL)
     {
         if(key == t->data)
-            return;
+            return t;
         else if ( key < t->data)
             t=t->lchild;
         else 
